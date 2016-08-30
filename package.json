@@ -1,26 +1,26 @@
 {
-  "name": "ecmascript6-study",
-  "version": "0.1.0",
-  "description": "ECMAScript 6 Study based on Understanding ECMAScript6 by Nicholas C. Zakas",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pauloantiquera/ecmascript6-study.git"
-  },
-  "keywords": [
-    "ECS6",
-    "JS",
-    "'Unit",
-    "testing'",
-    "TDD"
-  ],
-  "author": "Paulo Antiquera",
-  "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/pauloantiquera/ecmascript6-study/issues"
-  },
-  "homepage": "https://github.com/pauloantiquera/ecmascript6-study#readme"
+    "name": "ecmascript6-study",
+    "version": "0.1.0",
+    "description": "ECMAScript 6 Study based on Understanding ECMAScript6 by Nicholas C. Zakas",
+    "main": "index.js",
+    "scripts": {
+        "test": "jasmine-node **/test/* --autotest --watch . --color --verbose --growl"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pauloantiquera/ecmascript6-study.git"
+    },
+    "keywords": [
+        "ECS6",
+        "JS",
+        "'Unit",
+        "testing'",
+        "TDD"
+    ],
+    "author": "Paulo Antiquera",
+    "license": "UNLICENSED",
+    "bugs": {
+        "url": "https://github.com/pauloantiquera/ecmascript6-study/issues"
+    },
+    "homepage": "https://github.com/pauloantiquera/ecmascript6-study#readme"
 }
