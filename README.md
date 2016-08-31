@@ -8,4 +8,8 @@ It's necessary to get jasmine-node installed locally (`npm i jasmine-node -g`) i
 
 * Block-Level Declarations
 * Block Bindings in Loops
-* Emerging best practices in declarations
+* Emerging Best Practices for Block Bindings
+
+##Chapter 2 - Strings and Regular Expressions
+
+* UTF-16 Support

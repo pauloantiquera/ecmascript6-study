@@ -4,7 +4,7 @@
     "description": "ECMAScript 6 Study based on Understanding ECMAScript6 by Nicholas C. Zakas",
     "main": "index.js",
     "scripts": {
-        "test": "jasmine-node **/test/* --autotest --watch . --color --verbose --growl"
+        "test": "jasmine-node **/test/* --autotest --watch **/* --color --verbose --growl"
     },
     "repository": {
         "type": "git",
