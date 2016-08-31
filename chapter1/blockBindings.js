@@ -1,10 +1,11 @@
 'use strict'
+
 const letDeclaration = require('./letDeclaration');
 const constDeclaration = require('./constDeclaration');
 const letDeclarationInLoops = require('./letDeclarationInLoops');
 const constDeclarationInLoops = require('./constDeclarationInLoops');
 
-var blockLevelDeclarationModule = {
+const blockBindingsModule = {
     getValue: letDeclaration.getValue,
     getMaxItems: constDeclaration.getMaxItems,
     setMaxItems: constDeclaration.setMaxItems,
@@ -15,4 +16,4 @@ var blockLevelDeclarationModule = {
     repeat: constDeclarationInLoops.repeat
 };
 
-module.exports = blockLevelDeclarationModule;
+module.exports = blockBindingsModule;
