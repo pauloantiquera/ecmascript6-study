@@ -1,6 +1,6 @@
 'use strict'
 
-describe('Block Bindings Unit Test Suit', function() {
+describe('Ch1. Block Bindings Unit Test Suit', function() {
     const blockBindingsModule = require('../blockBindings');
 
     describe('let Declaration', function() {

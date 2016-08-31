@@ -13,3 +13,4 @@ It's necessary to get jasmine-node installed locally (`npm i jasmine-node -g`) i
 ##Chapter 2 - Strings and Regular Expressions
 
 * UTF-16 Support
+* Regular Expressions

@@ -18,11 +18,29 @@ function getTextFor(codePoint) {
     return String.fromCodePoint(codePoint);
 }
 
+function compare(textA, textB) {
+    const normalizedTextA = textA.normalize();
+    const normalizedTextB = textB.normalize();
+
+    if (normalizedTextA === normalizedTextB) {
+        return 0;
+    } 
+
+    if (normalizedTextA < normalizedTextB) {
+        return -1;
+    }
+
+    if (normalizedTextA > normalizedTextB) {
+        return 1;
+    }
+}
+
 const utf16 = {
     getECMAScript5Text: getECMAScript5Text,
     getECMAScript6Text: getECMAScript6Text,
     is32Bit: is32Bit,
-    getTextFor: getTextFor
+    getTextFor: getTextFor,
+    compare: compare
 };
 
 module.exports = utf16;

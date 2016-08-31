@@ -2,7 +2,7 @@
 
 const stringsAndRegularExpressions = require('../stringsAndRegularExpressions');
 
-describe('Strings and Regular Expressions Unit Test Suit', function() {
+describe('Ch2. Strings and Regular Expressions Unit Test Suit', function() {
     describe('UTF-16 Code Points', function() {
         describe('ECMAScript5 UTF-16 Support - getECMAScript5Text()', function() {
             const getECMAScript5Text = stringsAndRegularExpressions.getECMAScript5Text;
@@ -61,6 +61,59 @@ describe('Strings and Regular Expressions Unit Test Suit', function() {
 
                 it('should return the `𠮷` String for 134071 code point', function() {
                     expect(getTextFor(134071)).toBe('𠮷');
+                });
+            });
+            
+            describe('Some characters can be considered canonically equal when normalized - compare()', function() {
+                const compare = stringsAndRegularExpressions.compare;
+
+                it('should return 0 (equal) to the comparation between `\u212b` (\\u212b) and `\u00c5` (\\u00c5)', function() {
+                    expect(compare('\u212b', '\u00c5')).toBe(0);
+                });
+            });            
+        });
+
+        describe('Regular Expressions support to Unicode', function() {
+            describe('RegExp `u` flag use - getAUnicodeText()', function() {
+                const getAUnicodeText = stringsAndRegularExpressions.getAUnicodeText;
+
+                it('should return a String 2 length long', function() {
+                    expect(getAUnicodeText().length).toBe(2);
+                });
+
+                it('should return a String that do not match with `/^.$/`', function() {
+                    expect(/^.$/.test(getAUnicodeText)).toBe(false);
+                });
+
+                it('should return a String that match with `/^.$/u`', function() {
+                    expect(/^.$/u.test(getAUnicodeText())).toBe(true);
+                });
+            });
+
+            describe('Counting code points in a String - codePointLength()', function() {
+                const codePointLength = stringsAndRegularExpressions.codePointLength;
+
+                it('Must return 3 code points for both `abc` and `𠮷bc` strings', function() {
+                    var stringWithRegularCharacters = 'abc';
+                    const stringWithSpecialCharacters = '𠮷bc';
+
+                    expect(stringWithRegularCharacters.length).toBe(3);
+                    expect(stringWithSpecialCharacters.length).toBe(4);
+
+                    expect(codePointLength(stringWithRegularCharacters)).toBe(3);
+                    expect(codePointLength(stringWithSpecialCharacters)).toBe(3);
+                });
+            });
+
+            describe('Checking if JavaScriptEngine supports a RegExp flag - hasRegExpSupportFor(flag)', function() {
+                const hasRegExpSupportFor = stringsAndRegularExpressions.hasRegExpSupportFor;
+
+                it('should return true for `g` flag', function() {
+                    expect(hasRegExpSupportFor('g')).toBe(true);
+                });
+
+                it('should return false for `t` flag', function() {
+                    expect(hasRegExpSupportFor('t')).toBe(false);
                 });
             });
         });
