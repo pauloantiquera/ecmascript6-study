@@ -1,5 +1,7 @@
 const utf16 = require('./utf16');
 const regularExpressions = require('./regularExpressions');
+const substrings = require('./substrings');
+const stringIdenter = require('./stringIdenter');
 
 const stringsAndRegularExpressionsModule = {
     getECMAScript5Text: utf16.getECMAScript5Text,
@@ -9,7 +11,9 @@ const stringsAndRegularExpressionsModule = {
     compare: utf16.compare,
     getAUnicodeText: regularExpressions.getAUnicodeText,
     codePointLength: regularExpressions.codePointLength,
-    hasRegExpSupportFor: regularExpressions.hasRegExpSupportFor
+    hasRegExpSupportFor: regularExpressions.hasRegExpSupportFor,
+    getMessage: substrings.getMessage,
+    ident: stringIdenter.ident
 };
 
 module.exports = stringsAndRegularExpressionsModule;

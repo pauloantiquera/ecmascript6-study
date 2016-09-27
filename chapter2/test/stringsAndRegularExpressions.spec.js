@@ -116,6 +116,59 @@ describe('Ch2. Strings and Regular Expressions Unit Test Suit', function() {
                     expect(hasRegExpSupportFor('t')).toBe(false);
                 });
             });
+
+            describe('Methods for identifying substrings - getMessage()', function() {
+                const getMessage = stringsAndRegularExpressions.getMessage;
+                const message = getMessage();
+
+                it('should return a string starting with `Hello`', function() {
+                    expect(message.startsWith('Hello')).toBe(true);
+                });
+
+                it('should return a string that ends with `!`', function() {
+                    expect(message.endsWith('!')).toBe(true);
+                });
+
+                it('should return a string that includes `o`', function() {
+                    expect(message.includes('o')).toBe(true)
+                });
+
+                it('should return a string that, excluding first 4 chars, the result substring starts with `o`', function() {
+                    expect(message.startsWith('o', 4)).toBe(true);
+                });
+
+                it('should return a string which have the 8 initial char substring ends with `o`', function() {
+                    expect(message.endsWith('o', 8)).toBe(true);
+                });
+
+                it('shoul return a string that doesn`t include the `o` in its last 4 chars substring', function() {
+                    expect(message.includes('o', 8)).toBe(false);
+                });
+            });
+
+            describe('The repeat method - ident(string, level, numberOfSpaces)', function() {
+                const ident = stringsAndRegularExpressions.ident;
+
+                it('should return `noident`', function() {
+                    const string = 'noident';
+                    const level = 0;
+                    const numberOfSpaces = 2
+                    const returnedValue = ident(string, level, numberOfSpaces);
+
+                    expect(returnedValue).toEqual(string);
+                });
+
+                it('should return `  level1identedwith2space`', function() {
+                    const string = 'level1identedwith2space';
+                    const level = 1;
+                    const numberOfSpaces = 2;
+
+                    const returnedValue = ident(string, level, numberOfSpaces);
+                    const expectedValue = '  ' + string;
+
+                    expect(returnedValue).toEqual(expectedValue);
+                });
+            });
         });
     });
 });
