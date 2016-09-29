@@ -20,10 +20,15 @@ function hasRegExpSupportFor(flag) {
     }
 }
 
+function match(text, pattern) {
+    return pattern.exec(text);
+}
+
 const regularExpressionsModule = {
     getAUnicodeText: getAUnicodeText,
     codePointLength: codePointLength,
-    hasRegExpSupportFor: hasRegExpSupportFor
+    hasRegExpSupportFor: hasRegExpSupportFor,
+    match: match
 };
 
 module.exports = regularExpressionsModule;

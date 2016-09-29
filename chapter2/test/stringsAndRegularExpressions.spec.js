@@ -169,6 +169,19 @@ describe('Ch2. Strings and Regular Expressions Unit Test Suit', function() {
                     expect(returnedValue).toEqual(expectedValue);
                 });
             });
+
+            describe('The regular expression `y` flag - match(text, pattern)', function() {
+                const match = stringsAndRegularExpressions.match;
+
+                it('should match hello1 with pattern /hello\d\s?/', function() {
+                    const text = 'hello1 hello2 hello3';
+                    const pattern = /hello\d\s?/;
+
+                    const result = match(text, pattern);
+
+                    expect(result[0]).toEqual('hello1 ');
+                });
+            });
         });
     });
 });

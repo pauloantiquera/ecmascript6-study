@@ -13,7 +13,8 @@ const stringsAndRegularExpressionsModule = {
     codePointLength: regularExpressions.codePointLength,
     hasRegExpSupportFor: regularExpressions.hasRegExpSupportFor,
     getMessage: substrings.getMessage,
-    ident: stringIdenter.ident
+    ident: stringIdenter.ident,
+    match: regularExpressions.match
 };
 
 module.exports = stringsAndRegularExpressionsModule;
