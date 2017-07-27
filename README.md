@@ -2,7 +2,7 @@
 
 Study based on https://github.com/nzakas/understandinges6 by @nzakas
 
-It's necessary to get jasmine-node installed locally (`npm i jasmine-node -g`) in order to run tests specs using `npm test` command.
+It's necessary to have jasmine-node installed locally (`npm i jasmine-node -g`) in order to run tests specs using `npm test` command.
 
 ##Chapter 1 - Block Bindings
 
